@@ -1,5 +1,5 @@
 <?php
-//
+
 /* hello */
 require 'GumballMachine.php';
 
