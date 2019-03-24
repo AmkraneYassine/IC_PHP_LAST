@@ -1,6 +1,6 @@
 <?php
-
-
+//
+/* hello */
 require 'GumballMachine.php';
 
 class GumballMachineTest extends PHPUnit_Framework_TestCase

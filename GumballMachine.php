@@ -1,5 +1,5 @@
 <?php
-
+//test
 class GumballMachine{
 
 	private $gumballs;
