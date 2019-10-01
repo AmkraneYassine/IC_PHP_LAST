@@ -45,6 +45,7 @@ class GumballMachine
 	    {
 	        echo $sql . "<br>" . $e->getMessage();
 	    }
+	    $bdd = null;
 	    
 	}
 	
