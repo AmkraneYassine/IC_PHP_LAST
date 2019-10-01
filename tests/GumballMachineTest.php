@@ -19,7 +19,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
     public function testInsertC()
     {
-        $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(),"IOT","12",$this->gumballMachineInstance->GetIdP("yassine","Amakrane"));
+        $this->gumballMachineInstance->InsertC($this->gumballMachineInstance->getDB(),"IOT","12",$this->gumballMachineInstance->GetIdP("yassine","Amakrane"));
         
     }
 
