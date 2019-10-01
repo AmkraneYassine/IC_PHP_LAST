@@ -11,7 +11,7 @@ class GumballMachine
 	{
 	    try
 	    {
-	        $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	        $this->$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 	        print "Yes Dans le constructeur de BaseClass\n";
 	    }
 	    
@@ -36,17 +36,17 @@ class GumballMachine
 	{  
 	    try 
 	    {
-	       $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
-	       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	       //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	       $this->$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	       $sql = "INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('$nom','$prenom', '$date_naissance','$lieu')";
-	       $bdd->exec($sql);
+	       $this->$bdd->exec($sql);
 	       echo "New record created successfully";
 	    }
 	    catch(PDOException $e)
 	    {
 	        echo $sql . "<br>" . $e->getMessage();
 	    }
-	    $bdd = null;
+	    //$bdd = null;
 	    
 	}
 	
