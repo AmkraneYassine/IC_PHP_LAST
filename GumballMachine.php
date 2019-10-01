@@ -37,18 +37,10 @@ class GumballMachine{
 	}
 	public function InsertP($nom, $prenom , $date_naissance,$lieu)
 	{
-	    $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES ($nom, $prenom, $date_naissance, $lieu)";
+	    $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES (?,?,?,?)";
 	    
-	    if (mysqli_query($bdd, $sql)) 
-	    {
-	        echo "New record created successfully";
-	        return true;
-	    } 
-	    else 
-	    {
-	        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-	        return false;
-	    }
+	    $stmt= $pdo->prepare($sql);
+	    $stmt->execute([$nom, $prenom, $date_naissance, $lieu]);
 	    
 	}
 	
