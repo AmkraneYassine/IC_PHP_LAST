@@ -21,7 +21,10 @@ class GumballMachine
 	    }
 	}
 
-
+    public function getDB()
+    {
+        return $this->bdd;
+    }
 	public function setGumballs($amount)
 	{
 		$this->gumballs = $amount;
@@ -32,14 +35,14 @@ class GumballMachine
 	{
 		$this->setGumballs($this->getGumballs() - 1);
 	}
-	public function InsertP( $nom, $prenom , $date_naissance,$lieu)
+	public function InsertP($bdd, $nom, $prenom , $date_naissance,$lieu)
 	{  
 	    try 
 	    {
 	       //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
-	       $this->$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	       $sql = "INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('$nom','$prenom', '$date_naissance','$lieu')";
-	       $this->$bdd->exec($sql);
+	       $bdd->exec($sql);
 	       echo "New record created successfully";
 	    }
 	    catch(PDOException $e)
