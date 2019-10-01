@@ -39,7 +39,7 @@ class GumballMachine{
 	{
 	    $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES (?,?,?,?)";
 	    
-	    $stmt= $pdo->prepare($sql);
+	    $stmt= $bdd->prepare($sql);
 	    $stmt->execute([$nom, $prenom, $date_naissance, $lieu]);
 	    
 	}
