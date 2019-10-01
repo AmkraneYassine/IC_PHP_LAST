@@ -34,11 +34,12 @@ class GumballMachine
 	}
 	public function InsertP( $nom, $prenom , $date_naissance,$lieu)
 	{  
-	    try {
-	    $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
-	    $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES ($nom, $prenom, $date_naissance, $lieu)";
-	    $bdd->exec($sql);
-	    echo "New record created successfully";
+	    try 
+	    {
+	       $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	       $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES ($nom, $prenom, $date_naissance, $lieu)";
+	       $bdd->exec($sql);
+	       echo "New record created successfully";
 	    }
 	    catch(PDOException $e)
 	    {
