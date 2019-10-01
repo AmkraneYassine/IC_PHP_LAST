@@ -34,9 +34,9 @@ class GumballMachine
 	}
 	public function InsertP( $nom, $prenom , $date_naissance,$lieu)
 	{  
-	    $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES (?,?,?,?)";
+	    /*$sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES (?,?,?,?)";
 	    $stmt= $this->$bdd->prepare($sql);
-	    $stmt->execute([$nom, $prenom, $date_naissance, $lieu]);
+	    $stmt->execute([$nom, $prenom, $date_naissance, $lieu]);*/
 	    
 	}
 	
