@@ -60,6 +60,8 @@ class GumballMachine
 	    
 	}
 	
+	
+	
 	//Inserion dans la table Prof 
 	public function InsertP($bdd, $nom, $prenom , $date_naissance,$lieu)
 	{  
