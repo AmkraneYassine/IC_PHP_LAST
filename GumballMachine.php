@@ -35,4 +35,32 @@ class GumballMachine{
 	public function turnWheel(){
 		$this->setGumballs($this->getGumballs() - 1);
 	}
+	public function InsertP($nom, $prenom , $date_naissance,$lieu)
+	{
+	    $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES ($nom, $prenom, $date_naissance, $lieu)";
+	    
+	    if (mysqli_query($conn, $sql)) 
+	    {
+	        echo "New record created successfully";
+	        return true;
+	    } 
+	    else 
+	    {
+	        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	        return false;
+	    }
+	    
+	}
+	
+	// Set the amount of gumballs in the machine
+	public function UpdateP()
+	{
+	    //$this->gumballs = $amount;
+	}
+	
+	// The user turns the wheel, machine dispenses gumball!
+	public function DeleteP()
+	{
+	    //$this->setGumballs($this->getGumballs() - 1);
+	}
 }
