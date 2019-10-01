@@ -17,6 +17,11 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
         $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(),"yassine","Amakrane","1994-04-22","Zagoura");
        
     }
+    public function testInsertC()
+    {
+        $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(),"IOT","12",$this->gumballMachineInstance->GetIdP("yassine","Amakrane"));
+        
+    }
 
     /*public function testIfWheelWorks(){
     	// Suppose we have 100 gumballs...
