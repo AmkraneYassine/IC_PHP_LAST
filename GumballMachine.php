@@ -11,9 +11,8 @@ class GumballMachine
 	{
 	    try
 	    {
-	        $conn = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	        $this->bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 	        print "Yes Dans le constructeur de BaseClass\n";
-	        $this->$bdd=$conn;
 	    }
 	    
 	    catch (Exception $e)
