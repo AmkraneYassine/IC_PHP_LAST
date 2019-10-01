@@ -3,6 +3,22 @@
 class GumballMachine{
 
 	private $gumballs;
+	
+	private $bdd;
+	
+	function __construct()
+	{
+	    try
+	    {
+	        $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	        print "Dans le constructeur de BaseClass\n";
+	    }
+	    
+	    catch (Exception $e)
+	    {
+	        die('Erreur : ' . $e->getMessage());
+	    }
+	}
 
 
 	// Get the amount of gumballs still in the machine
