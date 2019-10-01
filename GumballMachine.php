@@ -22,8 +22,8 @@ class GumballMachine{
 
 
 	// Get the amount of gumballs still in the machine
-	public function getGumballs(){
-		return $this->gumballs;
+	public function getData(){
+	    return $this->$bdd;
 	}
 
 	// Set the amount of gumballs in the machine
@@ -35,7 +35,7 @@ class GumballMachine{
 	public function turnWheel(){
 		$this->setGumballs($this->getGumballs() - 1);
 	}
-	public function InsertP($nom, $prenom , $date_naissance,$lieu)
+	public function InsertP($bdd, $nom, $prenom , $date_naissance,$lieu)
 	{
 	    $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES (?,?,?,?)";
 	    
