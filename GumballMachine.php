@@ -34,7 +34,7 @@ class GumballMachine{
 	    {
 	        die('Erreur : ' . $e->getMessage());
 	    }
-	    return $this->$bdd;
+	    //return $this->$bdd;
 	}
 
 	// Set the amount of gumballs in the machine
@@ -46,10 +46,10 @@ class GumballMachine{
 	public function turnWheel(){
 		$this->setGumballs($this->getGumballs() - 1);
 	}
-	public function InsertP($bdd, $nom, $prenom , $date_naissance,$lieu)
+	public function InsertP( $nom, $prenom , $date_naissance,$lieu)
 	{
+	    getData();
 	    $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES (?,?,?,?)";
-	    
 	    $stmt= $bdd->prepare($sql);
 	    $stmt->execute([$nom, $prenom, $date_naissance, $lieu]);
 	    
