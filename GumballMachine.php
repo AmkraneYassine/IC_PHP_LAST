@@ -43,7 +43,7 @@ class GumballMachine
 	    $stmt->execute();
 	    while($row = $stmt->fetch())
 	    {
-	        echo "id: " . $row["id"]. " - Nom: " . $row["nom"]. " " . $row["prenom"]. "Date de Naissance " . $row["date_naissance"]. " Lieu de Naissance " . $row["lieu_naissance"] ."\n";
+	        echo "* id: " . $row["id"]. " Last Name: " . $row["nom"]. " First Name: " . $row["prenom"]. " Birth Date: " . $row["date_naissance"]. " birth Place: " . $row["lieu_naissance"] ."\n";
 	    }
 	    
 	}
