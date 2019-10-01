@@ -11,7 +11,7 @@ class GumballMachine
 	{
 	    try
 	    {
-	        $this->bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	        $this->$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 	        print "Yes Dans le constructeur de BaseClass\n";
 	    }
 	    
@@ -34,7 +34,7 @@ class GumballMachine
 	}
 	public function InsertP( $nom, $prenom , $date_naissance,$lieu)
 	{  
-	    $this->bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	    $this->$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 	    $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES (?,?,?,?)";
 	    $stmt= $this->$bdd->prepare($sql);
 	    $stmt->execute([$nom, $prenom, $date_naissance, $lieu]);
