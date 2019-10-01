@@ -34,9 +34,9 @@ class GumballMachine
 	}
 	public function InsertP( $nom, $prenom , $date_naissance,$lieu)
 	{  
-	    $this->$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	    $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 	    $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES (?,?,?,?)";
-	    $stmt= $this->$bdd->prepare($sql);
+	    $stmt= $bdd->prepare($sql);
 	    $stmt->execute([$nom, $prenom, $date_naissance, $lieu]);
 	    
 	}
