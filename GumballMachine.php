@@ -12,7 +12,7 @@ class GumballMachine
 	    try
 	    {
 	        $this->bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
-	        print "Yes Dans le constructeur de BaseClass\n";
+	        //print "Yes Dans le constructeur de BaseClass\n";
 	    }
 	    
 	    catch (Exception $e)
@@ -48,6 +48,17 @@ class GumballMachine
 	    
 	}
 	
+	public function AffichageCours($etat)
+	{
+	    print("\n".$etat."\n");
+	    $stmt = $this->bdd->prepare("select * from cours");
+	    $stmt->execute();
+	    while($row = $stmt->fetch())
+	    {
+	        echo "* id: " . $row["id"]. " Name: " . $row["intitule"]. " Time: " . $row["duree"]. " Id Prof: " . $row["id_prof"] ."\n";
+	    }
+	    
+	}
 	
 	//Inserion dans la table Prof 
 	public function InsertP($bdd, $nom, $prenom , $date_naissance,$lieu)
@@ -58,7 +69,7 @@ class GumballMachine
 	       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	       $sql = "INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('$nom','$prenom', '$date_naissance','$lieu')";
 	       $bdd->exec($sql);
-	       echo "New Prof Insert";
+	       echo "\n We Hae a new insertion of Professor";
 	    }
 	    catch(PDOException $e)
 	    {
@@ -84,7 +95,7 @@ class GumballMachine
 	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	        $sql = "INSERT INTO cours (intitule, duree, id_prof) VALUES ('$intitule','$duree', '$id_prof')";
 	        $this->bdd->exec($sql);
-	        echo "New Cours insert\n";
+	        echo "\n We Have a new insertion of Corse";
 	    }
 	    catch(PDOException $e)
 	    {

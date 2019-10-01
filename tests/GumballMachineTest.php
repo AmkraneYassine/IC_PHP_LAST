@@ -14,7 +14,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     
     public function testAffichageProfAVI()
     {
-        $this->gumballMachineInstance->AffichageProf("Before Insertion");
+        $this->gumballMachineInstance->AffichageProf("Before Insertion of Professors");
     }
     public function testInsertP()
     {
@@ -23,12 +23,23 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
     public function testAffichageProfAPI()
     {
-        $this->gumballMachineInstance->AffichageProf("After Insertion");
+        $this->gumballMachineInstance->AffichageProf("After Insertion of Professors");
+    }
+    
+    
+    
+    public function testAffichageCoursAVI()
+    {
+        $this->gumballMachineInstance->AffichageCours("Before Insertion of Courses");
     }
     public function testInsertC()
     {
         $this->gumballMachineInstance->InsertC("IOT","12",$this->gumballMachineInstance->GetIdP("yassine","Amakrane"));
         
+    }
+    public function testAffichageCoursAPI()
+    {
+        $this->gumballMachineInstance->AffichageCours("After Insertion of Courses");
     }
 
    
