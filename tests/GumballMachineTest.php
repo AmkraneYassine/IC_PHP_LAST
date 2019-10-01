@@ -12,25 +12,24 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
         $this->gumballMachineInstance = new GumballMachine();
     }
     
+    public function testAffichageProfAVI()
+    {
+        $this->gumballMachineInstance->AffichageProf("Avant Insertion");
+    }
     public function testInsertP()
     {
         $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(),"yassine","Amakrane","1994-04-22","Zagoura");
        
     }
+    public function testAffichageProfAPI()
+    {
+        $this->gumballMachineInstance->AffichageProf("Après Insertion");
+    }
     public function testInsertC()
     {
-        $this->gumballMachineInstance->InsertC($this->gumballMachineInstance->getDB(),"IOT","12",$this->gumballMachineInstance->GetIdP("yassine","Amakrane"));
+        $this->gumballMachineInstance->InsertC("IOT","12",$this->gumballMachineInstance->GetIdP("yassine","Amakrane"));
         
     }
 
-    /*public function testIfWheelWorks(){
-    	// Suppose we have 100 gumballs...
-    	$this->gumballMachineInstance->setGumballs(100);
-
-    	// ... And we turn the wheel once...
-    	$this->gumballMachineInstance->turnWheel();
-
-    	// ... we should now have 99 gumballs remaining in the machine right?
-    	$this->assertEquals(99, $this->gumballMachineInstance->getGumballs()); 
-    }*/
+   
 }

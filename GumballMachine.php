@@ -36,6 +36,19 @@ class GumballMachine
 		$this->setGumballs($this->getGumballs() - 1);
 	}
 	
+	public function AffichageProf($etat)
+	{
+	    print("\n".$etat."\n");
+	    $stmt = $this->bdd->prepare("select * from prof");
+	    $stmt->execute();
+	    while($row = $stmt->fetch())
+	    {
+	        echo "id: " . $row["id"]. " - Nom: " . $row["nom"]. " " . $row["prenom"]. "Date de Naissance " . $row["date_naissance"]. " Lieu de Naissance " . $row["lieu_naissance"] ."<br>";
+	    }
+	    
+	}
+	
+	
 	//Inserion dans la table Prof 
 	public function InsertP($bdd, $nom, $prenom , $date_naissance,$lieu)
 	{  
@@ -63,15 +76,15 @@ class GumballMachine
 	}
 	
 	//Insertion dans la table Cours
-	public function InsertC($bdd, $intitule, $duree , $id_prof)
+	public function InsertC($intitule, $duree , $id_prof)
 	{
 	    try
 	    {
 	        //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
-	        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	        $sql = "INSERT INTO cours (intitule, duree, id_prof) VALUES ('$intitule','$duree', '$id_prof')";
-	        $bdd->exec($sql);
-	        echo "New Cours insert";
+	        $this->bdd->exec($sql);
+	        echo "New Cours insert\n";
 	    }
 	    catch(PDOException $e)
 	    {
