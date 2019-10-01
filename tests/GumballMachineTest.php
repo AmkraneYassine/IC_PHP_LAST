@@ -14,7 +14,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     
     public function testAffichageProfAVI()
     {
-        $this->gumballMachineInstance->AffichageProf("Avant Insertion");
+        $this->gumballMachineInstance->AffichageProf("Before Insertion");
     }
     public function testInsertP()
     {
@@ -23,7 +23,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
     public function testAffichageProfAPI()
     {
-        $this->gumballMachineInstance->AffichageProf("Après Insertion");
+        $this->gumballMachineInstance->AffichageProf("After Insertion");
     }
     public function testInsertC()
     {
