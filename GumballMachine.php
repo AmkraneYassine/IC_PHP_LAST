@@ -39,7 +39,7 @@ class GumballMachine{
 	{
 	    $sql = "INSERT INTO prof (nom, prenom, data_naissance, lieu_naissance) VALUES ($nom, $prenom, $date_naissance, $lieu)";
 	    
-	    if (mysqli_query($conn, $sql)) 
+	    if (mysqli_query($bdd, $sql)) 
 	    {
 	        echo "New record created successfully";
 	        return true;
