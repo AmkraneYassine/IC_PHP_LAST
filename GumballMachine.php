@@ -45,6 +45,7 @@ class GumballMachine
 	    {
 	        echo "* id: " . $row["id"]. " Last Name: " . $row["nom"]. " First Name: " . $row["prenom"]. " Birth Date: " . $row["date_naissance"]. " birth Place: " . $row["lieu_naissance"] ."\n";
 	    }
+		return true;
 	    
 	}
 	
@@ -57,6 +58,7 @@ class GumballMachine
 	    {
 	        echo "* id: " . $row["id"]. " Name: " . $row["intitule"]. " Time: " . $row["duree"]. " Id Prof: " . $row["id_prof"] ."\n";
 	    }
+		return true;
 	    
 	}
 	
@@ -72,10 +74,12 @@ class GumballMachine
 	       $sql = "INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('$nom','$prenom', '$date_naissance','$lieu')";
 	       $bdd->exec($sql);
 	       echo "\n We Hae a new insertion of Professor";
+	       return true;
 	    }
 	    catch(PDOException $e)
 	    {
 	        echo $sql . "<br>" . $e->getMessage();
+		return false;
 	    }
 	    
 	}
@@ -86,6 +90,20 @@ class GumballMachine
 	    $stmt->execute([$nom,$prenom]); 
 	    $user = $stmt->fetch();
 	    return $user['id'];
+	}
+	public function GetLastIDP()
+	{
+	    $stmt = $this->bdd->prepare("select max(id) as maximum from prof");
+	    $stmt->execute();
+	    $user = $stmt->fetch();
+	    return $user['maximum'];
+	}
+	public function GetLastIDC()
+	{
+	    $stmt = $this->bdd->prepare("select max(id) as maximum from cours");
+	    $stmt->execute();
+	    $user = $stmt->fetch();
+	    return $user['maximum'];
 	}
 	
 	//Insertion dans la table Cours
