@@ -106,14 +106,40 @@ class GumballMachine
 	    
 	}
 	
-	public function UpdateP()
+	public function UpdateP($nom,$prenom,$id)
 	{
-	    //$this->gumballs = $amount;
+	    try
+	    {
+	        //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	        $sql = "update prof set nom='$nom', prenom='$prenom' where id='$id'";
+	        $this->bdd->exec($sql);
+		return true;
+	        //echo "\n We Have a new insertion of Corse";
+	    }
+	    catch(PDOException $e)
+	    {
+	        echo $sql . "<br>" . $e->getMessage();
+		return false;
+	    }
 	}
 	
 	// The user turns the wheel, machine dispenses gumball!
-	public function DeleteP()
+	public function DeleteP($id)
 	{
-	    //$this->setGumballs($this->getGumballs() - 1);
+	    try
+	    {
+	        //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	        $sql = "delete prof where id='$id'";
+	        $this->bdd->exec($sql);
+		return true;
+	        //echo "\n We Have a new insertion of Corse";
+	    }
+	    catch(PDOException $e)
+	    {
+	        echo $sql . "<br>" . $e->getMessage();
+		return false;
+	    }
 	}
 }
