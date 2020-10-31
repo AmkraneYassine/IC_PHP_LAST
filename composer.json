@@ -1,0 +1,18 @@
+{
+    "name": "guttadauriaa/demo-php-unit",
+    "require-dev": {
+        "phpunit/phpunit": "^9.4"
+    },
+    "authors": [
+        {
+            "name": "Adriano Guttadauria",
+            "email": "adriano.guttadauria@umons.ac.be"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Guttadauria\\": "src/"
+        }
+    },
+    "require": {}
+}
