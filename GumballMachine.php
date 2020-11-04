@@ -21,7 +21,7 @@ class GumballMachine
 	
 	function __construct()
 	{
-		
+		$db = "test" ;
 		$host = "192.168.250.3";
 		$root = "user01";
 		$root_password = "user01";
