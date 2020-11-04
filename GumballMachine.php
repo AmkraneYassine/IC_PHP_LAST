@@ -21,7 +21,7 @@ class GumballMachine
 	
 	function __construct()
 	{
-		/*$db = "test" ;*/
+		$db = "user01_test_php" ;
 		$host = "192.168.250.3";
 		$root = "user01";
 		$root_password = "user01";
@@ -35,7 +35,7 @@ class GumballMachine
    		 die("DB ERROR: " . $e->getMessage());
 		}
 		
-	    /*
+	    
 	    try
 	    {
 		// "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
@@ -47,7 +47,7 @@ class GumballMachine
 	    {
 	        die('Erreur : ' . $e->getMessage());
 	    }
-	    */
+	    
 	}
 
     public function getDB()
