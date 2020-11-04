@@ -6,6 +6,11 @@ class GumballMachine
 	private $gumballs;
 	
 	private $bdd;
+	/* Paramètre de connexion à la base de données*/
+	private $servername="192.168.250.3";
+	private $db_name="user01_test_java"; //a remplir
+	private $db_user="user01"; //a remplir
+	private $db_pass="user01"; //a remplir
 	
 	function __construct()
 	{
