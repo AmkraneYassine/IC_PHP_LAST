@@ -24,8 +24,7 @@ class GumballMachine
 		$host = "192.168.250.3";
 		$root = "user01";
 		$root_password = "user01";
-		mysql:host=localhost;dbname=test
-
+		
 		try {
 			  $dbh = new PDO("mysql:host=$host", $root, $root_password);
 			  $dbh->exec("CREATE DATABASE `$db`;")
