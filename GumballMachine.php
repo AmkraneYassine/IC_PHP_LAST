@@ -21,13 +21,13 @@ class GumballMachine
 	
 	function __construct()
 	{
-		$db = "user01_test_php" ;
+		$dbname = "user01_test_php" ;
 		$host = "192.168.250.3";
 		$root = "user01";
 		$root_password = "user01";
 		
 		try {
-			  $dbh = new PDO("mysql:host=$host", $root, $root_password);
+			  $dbh = new PDO("mysql:host=$host; dbname=$dbname", $root, $root_password);
 			  $dbh->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php` ;") 
 			  or die(print_r($dbh->errorInfo(), true));
 		}
