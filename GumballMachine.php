@@ -31,6 +31,12 @@ class GumballMachine
 			  $this->bdd = new PDO("mysql:host=$host; dbname=$dbname", $root, $root_password);
 			  $this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php` ;") 
 			  or die(print_r($this->bdd->errorInfo(), true));
+		
+			$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="CREATE TABLE  IF NOT EXISTS prof( id INT NOT NULL AUTO_INCREMENT , nom VARCHAR(25) NOT NULL , prenom VARCHAR(25) NOT NULL , date_naissance DATE NOT NULL , lieu_naissance TEXT NOT NULL , PRIMARY KEY (id)) ";
+			$this->bdd->exec($sql);
+			$sql="CREATE TABLE  IF NOT EXISTS cours( id INT NOT NULL AUTO_INCREMENT , intitule VARCHAR(50) NOT NULL , duree INT NOT NULL , id_prof INT NOT NULL , PRIMARY KEY (id), FOREIGN KEY (id_prof) REFERENCES prof(id)) ";
+			$this->bdd->exec($sql);
 		}
 		catch (PDOException $e) {
    		 die("DB ERROR: " . $e->getMessage());
