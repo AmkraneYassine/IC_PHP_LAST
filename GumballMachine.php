@@ -21,15 +21,15 @@ class GumballMachine
 	
 	function __construct()
 	{
-		$db = "test" ;
+		/*$db = "test" ;*/
 		$host = "192.168.250.3";
 		$root = "user01";
 		$root_password = "user01";
 		
 		try {
-			  $this->bdd = new PDO("mysql:host=$host", $root, $root_password);
-			  $this->bdd->exec("CREATE DATABASE `$db`;")
-			  or die(print_r($this->bdd->errorInfo(), true));
+			  $dbh = new PDO("mysql:host=$host", $root, $root_password);
+			  $dbh->exec("CREATE SCHEMA IF NOT EXISTS `yassine_test` DEFAULT CHARACTER SET utf8 ; USE `yassine_test` ;") 
+			  or die(print_r($dbh->errorInfo(), true));
 		}
 		catch (PDOException $e) {
    		 die("DB ERROR: " . $e->getMessage());
