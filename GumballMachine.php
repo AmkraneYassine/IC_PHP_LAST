@@ -20,7 +20,7 @@ class GumballMachine
 	    try
 	    {
 		// "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
-	        $this->bdd = new PDO('mysql:host=192.168.250.3;dbname='user01_test_java';charset=utf8', 'user01', 'user01');
+	        $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_java;charset=utf8', 'user01', 'user01');
 	        //print "Yes Dans le constructeur de BaseClass\n";
 	    }
 	    
