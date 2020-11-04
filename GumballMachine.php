@@ -18,7 +18,7 @@ class GumballMachine
 	{
 	    try
 	    {
-	        $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_java;charset=utf8', 'user01', 'user01');
+	        $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_PHP_test_java;charset=utf8', 'user01', 'user01');
 	        //print "Yes Dans le constructeur de BaseClass\n";
 	    }
 	    
