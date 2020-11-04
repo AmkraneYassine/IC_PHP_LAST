@@ -23,8 +23,8 @@ class GumballMachine
 	{
 		$db = "test" ;
 		$host = "192.168.250.3";
-		$root = "user01";
-		$root_password = "user01";
+		$root = "root";
+		$root_password = "";
 		
 		try {
 			  $dbh = new PDO("mysql:host=$host", $root, $root_password);
