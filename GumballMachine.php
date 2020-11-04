@@ -6,19 +6,19 @@ class GumballMachine
 	private $gumballs;
 	
 	private $bdd;
-	/*
-	Paramètre de connexion à la base de données
+	
+	// Paramètre de connexion à la base de données
 	private $servername="192.168.250.3";
 	private $db_name="user01_test_java"; //a remplir
 	private $db_user="user01"; //a remplir
 	private $db_pass="user01"; //a remplir
-	*/
+	
 	
 	function __construct()
 	{
 	    try
 	    {
-	        $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_PHP_test_java;charset=utf8', 'user01', 'user01');
+	        $this->bdd = new PDO("mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass);
 	        //print "Yes Dans le constructeur de BaseClass\n";
 	    }
 	    
