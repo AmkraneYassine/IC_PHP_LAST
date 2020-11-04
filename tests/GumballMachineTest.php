@@ -1,11 +1,8 @@
 <?php
 
-/* hello */
 require 'GumballMachine.php';
 
-use PHPunit\Framework\TestCase;
-
-class GumballMachineTest extends TestCase
+class GumballMachineTest extends PHPUnit_Framework_TestCase
 {
     public $gumballMachineInstance;
     //public $gumballMachineInstance;
