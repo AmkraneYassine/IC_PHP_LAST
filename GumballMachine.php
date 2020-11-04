@@ -21,12 +21,25 @@ class GumballMachine
 	
 	function __construct()
 	{
+		$db_name = "user01_test_php" ;
+		$host = "192.168.250.3";
+		$root = "user01";
+		$root_password = "user01";
+		
+		try {
+			  $dbh = new PDO("mysql:host=$host", $root, $root_password);
+			  $dbh->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php` ;") 
+			  or die(print_r($dbh->errorInfo(), true));
+		}
+		catch (PDOException $e) {
+   		 die("DB ERROR: " . $e->getMessage());
+		}
 		
 	    
 	    try
 	    {
 		// "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
-	        $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=test;charset=utf8', 'user01', 'user01');
+	        $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_php;charset=utf8', 'user01', 'user01');
 	        //print "Yes Dans le constructeur de BaseClass\n";
 	    }
 	    
