@@ -28,7 +28,7 @@ class GumballMachine
 		
 		try {
 			  $dbh = new PDO("mysql:host=$host", $root, $root_password);
-			  $dbh->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user_test_php` ;") 
+			  $dbh->exec("CREATE SCHEMA IF NOT EXISTS `user_test_php` DEFAULT CHARACTER SET utf8 ; USE `user_test_php` ;") 
 			  or die(print_r($dbh->errorInfo(), true));
 		}
 		catch (PDOException $e) {
