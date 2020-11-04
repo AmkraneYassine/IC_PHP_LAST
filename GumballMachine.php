@@ -23,18 +23,19 @@ class GumballMachine
 	{
 		$db = "test" ;
 		$host = "192.168.250.3";
-		$root = "root";
-		$root_password = "";
+		$root = "user01";
+		$root_password = "user01";
 		
 		try {
-			  $dbh = new PDO("mysql:host=$host", $root, $root_password);
-			  $dbh->exec("CREATE DATABASE `$db`;")
-			  or die(print_r($dbh->errorInfo(), true));
+			  $this->bdd = new PDO("mysql:host=$host", $root, $root_password);
+			  $this->bdd->exec("CREATE DATABASE `$db`;")
+			  or die(print_r($this->bdd->errorInfo(), true));
 		}
 		catch (PDOException $e) {
    		 die("DB ERROR: " . $e->getMessage());
 		}
 		
+	    /*
 	    try
 	    {
 		// "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
@@ -46,6 +47,7 @@ class GumballMachine
 	    {
 	        die('Erreur : ' . $e->getMessage());
 	    }
+	    */
 	}
 
     public function getDB()
