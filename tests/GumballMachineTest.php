@@ -1,9 +1,10 @@
 <?php
 
 /* hello */
-require 'GumballMachine.php';
 
-use PHPunit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
+
+require 'GumballMachine.php';
 
 class GumballMachineTest extends TestCase
 {
@@ -17,7 +18,7 @@ class GumballMachineTest extends TestCase
     private $intitule="***"; //a remplir
     private $duree="***";    //a remplir
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->gumballMachineInstance = new GumballMachine();
     }
