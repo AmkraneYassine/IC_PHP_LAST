@@ -10,8 +10,8 @@ class GumballMachineTest extends TestCase
 {
     public $gumballMachineInstance;
     //prof
-    private $nom="x_test_tp"; // a changer
-    private $prenom="y_test_tp"; // a changer
+    private $nom="Amakrane"; // a changer
+    private $prenom="yassine"; // a changer
     private $date_naissance="0000-00-00"; // a changer
     private $lieu_naissance="XY"; // a changer
     // cours
