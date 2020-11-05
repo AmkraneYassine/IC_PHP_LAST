@@ -54,11 +54,11 @@ class GumballMachineTest extends TestCase
     }
     public function testUpdateP()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->UpdateP("Update","Update",29));
+        $this->assertEquals(true,$this->gumballMachineInstance->UpdateP("Update","Update",'29'));
     }
     public function testDeleteP()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->DeleteP(30));
+        $this->assertEquals(true,$this->gumballMachineInstance->DeleteP('30'));
     }
     public function testAffichageCoursAPI()
     {
