@@ -62,6 +62,6 @@ class GumballMachineTest extends TestCase
     }
     public function testAffichageCoursAPI()
     {
-        this->assertEquals(true, $this->gumballMachineInstance->AffichageCours("After Insertion of Courses"));
+        $this->assertEquals(true, $this->gumballMachineInstance->AffichageCours("After Insertion of Courses"));
     }
 }
