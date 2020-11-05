@@ -22,7 +22,7 @@ class GumballMachine
 	
 	function __construct()
 	{
-		/*
+		
 		$dbname = "user01_test_php1" ;
 		$host = "192.168.250.3";
 		$root = "user01";
@@ -30,20 +30,17 @@ class GumballMachine
 		
 		try {
 			  $this->bdd = new PDO("mysql:host=$host; dbname=$dbname", $root, $root_password);
-			  $this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php` ;") 
+			  $this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php1` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php1` ;") 
 			  or die(print_r($this->bdd->errorInfo(), true));
 		}
 		catch (PDOException $e) {
    		 die("DB ERROR: " . $e->getMessage());
 		}
-		*/
+		
 	    
 	    try
 	    {
 			// "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
-		    	$this->bdd = new PDO("mysql:host=$host; dbname=$db_name", $db_user, $db_pass);	
-		    	$this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php1` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php1` ;") 
-			  or die(print_r($this->bdd->errorInfo(), true));
 	        	$this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_php1;charset=utf8', 'user01', 'user01');
 			 /*print "Yes Dans le constructeur de BaseClass\n";*/
 			$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
