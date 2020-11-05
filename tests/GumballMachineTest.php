@@ -15,8 +15,8 @@ class GumballMachineTest extends TestCase
     private $date_naissance="0000-00-00"; // a changer
     private $lieu_naissance="XY"; // a changer
     // cours
-    private $intitule="***"; //a remplir
-    private $duree="***";    //a remplir
+    private $intitule="IOT"; //a remplir
+    private $duree="12";    //a remplir
 
     public function setUp(): void
     {
