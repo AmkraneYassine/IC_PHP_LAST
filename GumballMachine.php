@@ -23,7 +23,7 @@ class GumballMachine
 	function __construct()
 	{
 		/*
-		$dbname = "user01_test_php" ;
+		$dbname = "user01_test_php1" ;
 		$host = "192.168.250.3";
 		$root = "user01";
 		$root_password = "user01";
@@ -41,12 +41,12 @@ class GumballMachine
 	    try
 	    {
 			// "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
-	        	$this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_php;charset=utf8', 'user01', 'user01');
+	        	$this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_php1;charset=utf8', 'user01', 'user01');
 			 /*print "Yes Dans le constructeur de BaseClass\n";*/
 			$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sql="CREATE TABLE  IF NOT EXISTS prof( id INT NOT NULL AUTO_INCREMENT , nom VARCHAR(25) NOT NULL , prenom VARCHAR(25) NOT NULL , date_naissance DATE NOT NULL , lieu_naissance TEXT NOT NULL , PRIMARY KEY (id)) ";
 			$this->bdd->exec($sql);
-			$sql="CREATE TABLE  IF NOT EXISTS cours( id INT NOT NULL AUTO_INCREMENT , intitule VARCHAR(50) NOT NULL , duree INT NOT NULL , id_prof INT NOT NULL , PRIMARY KEY (id), FOREIGN KEY (id_prof) REFERENCES prof(id)) ";
+			$sql="CREATE TABLE  IF NOT EXISTS cours( id INT NOT NULL AUTO_INCREMENT , intitule VARCHAR(50) NOT NULL , duree INT NOT NULL , id_prof INT NOT NULL , PRIMARY KEY (id), FOREIGN KEY (id_prof) REFERENCES prof(id) on delete cascade) ";
 			$this->bdd->exec($sql);
 		    
 	    }
