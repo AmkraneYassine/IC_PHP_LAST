@@ -127,8 +127,7 @@ class GumballMachine
 	    $stmt = $this->bdd->prepare("select id from prof where nom=? and prenom=?");
 	    $stmt->execute([$nom,$prenom); 
 	    $user = $stmt->fetch();
-		echo $user['id'];
-	    return $user['id'];
+	    return $user;
 	}
 	public function GetLastIDP()
 	{
