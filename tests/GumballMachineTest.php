@@ -58,7 +58,7 @@ class GumballMachineTest extends TestCase
     }
     public function testDeleteP()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->DeleteP($this->gumballMachineInstance->GetIdP("New_Name1","New_Name2")));
+        $this->assertEquals(true,$this->gumballMachineInstance->DeleteP(12));
     }
     public function testAffichageCoursAPI()
     {
