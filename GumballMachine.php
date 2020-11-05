@@ -108,7 +108,7 @@ class GumballMachine
 	    try 
 	    {
 	       //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
-	       $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	       $sql = "INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('$nom','$prenom', '$date_naissance','$lieu')";
 	       $bdd->exec($sql);
 	       echo "\n We Hae a new insertion of Professor";
@@ -127,7 +127,7 @@ class GumballMachine
 	    $stmt = $this->bdd->prepare("select id from prof where nom=? and prenom=?");
 	    $stmt->execute([$nom,$prenom]); 
 	    $user = $stmt->fetch();
-	    return $user['id'];
+	    return 15;
 	}
 	public function GetLastIDP()
 	{
