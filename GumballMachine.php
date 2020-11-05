@@ -160,8 +160,7 @@ class GumballMachine
 	    {
 	        echo $sql . "<br>" . $e->getMessage();
 		return false;
-	    }
-	    
+	    } 
 	}
 	
 	public function UpdateP($nom,$prenom,$id)
@@ -172,8 +171,8 @@ class GumballMachine
 	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	        $sql = "update prof set nom='$nom', prenom='$prenom' where id='$id'";
 	        $this->bdd->exec($sql);
+		echo "\n We Have a new insertion of Corse";
 		return true;
-	        //echo "\n We Have a new insertion of Corse";
 	    }
 	    catch(PDOException $e)
 	    {
@@ -191,8 +190,8 @@ class GumballMachine
 	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	        $sql = "delete prof where id='$id'";
 	        $this->bdd->exec($sql);
+		echo "\n We Have a new insertion of Corse";
 		return true;
-	        //echo "\n We Have a new insertion of Corse";
 	    }
 	    catch(PDOException $e)
 	    {
