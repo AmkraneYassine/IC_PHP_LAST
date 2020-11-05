@@ -124,8 +124,8 @@ class GumballMachine
 	
 	public function GetIdP($nom,$prenom)
 	{
-	    $stmt = $this->bdd->prepare("select id from prof where nom='Yassine' and prenom='AMAKRANE'");
-	    $stmt->execute([$nom,$prenom]); 
+	    $stmt = $this->bdd->prepare("select id from prof where nom=? and prenom=?");
+	    $stmt->execute(["yassine","Amakrane"); 
 	    $user = $stmt->fetch();
 	    return $user['id'];
 	}
