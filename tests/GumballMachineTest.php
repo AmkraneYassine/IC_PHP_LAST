@@ -10,13 +10,13 @@ class GumballMachineTest extends TestCase
 {
     public $gumballMachineInstance;
     //prof
-    private $nom="x_test_tp"; // a changer
-    private $prenom="y_test_tp"; // a changer
+    private $nom="x_test_tp1"; // a changer
+    private $prenom="y_test_tp1"; // a changer
     private $date_naissance="0000-00-00"; // a changer
     private $lieu_naissance="XY"; // a changer
     // cours
-    private $intitule="***"; //a remplir
-    private $duree="***";    //a remplir
+    private $intitule="***1"; //a remplir
+    private $duree="***1";    //a remplir
 
     public function setUp(): void
     {
@@ -48,7 +48,7 @@ class GumballMachineTest extends TestCase
     public function testInsertC()
     {
         $max__id1=$this->gumballMachineInstance->GetLastIDC();
-        $this->gumballMachineInstance->InsertC("IOT","12",$this->gumballMachineInstance->GetIdP("yassine","Amakrane"));
+        $this->gumballMachineInstance->InsertC("***1","***1",$this->gumballMachineInstance->GetIdP("x_test_tp1","x_test_tp1"));
         $max__id2=$this->gumballMachineInstance->GetLastIDC();
         $this->assertEquals($max__id1+1,$max__id2);
     }
