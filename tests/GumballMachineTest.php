@@ -10,13 +10,13 @@ class GumballMachineTest extends TestCase
 {
     public $gumballMachineInstance;
     //prof
-    private $nom="Amakrane"; // a changer
-    private $prenom="yassine"; // a changer
+    private $nom="x_test_tp"; // a changer
+    private $prenom="y_test_tp"; // a changer
     private $date_naissance="0000-00-00"; // a changer
     private $lieu_naissance="XY"; // a changer
     // cours
-    private $intitule="IOT"; //a remplir
-    private $duree="12";    //a remplir
+    private $intitule="***"; //a remplir
+    private $duree="***";    //a remplir
 
     public function setUp(): void
     {
