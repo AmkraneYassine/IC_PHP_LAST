@@ -55,12 +55,10 @@ class GumballMachineTest extends TestCase
     public function testUpdateP()
     {
         $this->assertEquals(true,$this->gumballMachineInstance->UpdateP("Fabrice","Fabrice",'29'));
-        $this->gumballMachineInstance->AffichageProf("After Insertion of Professors");
     }
     public function testDeleteP()
     {
         $this->assertEquals(true,$this->gumballMachineInstance->DeleteP('32'));
-        $this->gumballMachineInstance->AffichageProf("After Insertion of Professors");
     }
     public function testAffichageCoursAPI()
     {
