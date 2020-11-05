@@ -47,34 +47,21 @@ class GumballMachineTest extends TestCase
     }
     public function testInsertC()
     {
-        /*
         $max__id1=$this->gumballMachineInstance->GetLastIDC();
         $this->gumballMachineInstance->InsertC("IOT","12",$this->gumballMachineInstance->GetIdP("yassine","Amakrane"));
         $max__id2=$this->gumballMachineInstance->GetLastIDC();
         $this->assertEquals($max__id1+1,$max__id2);
-        */
-        echo "\n testInsertC Done !"
     }
     public function testUpdateP()
     {
-        
-        /*
         $this->assertEquals(true,$this->gumballMachineInstance->UpdateP("New_Name1","New_Name2",$this->gumballMachineInstance->GetIdP("New_Name1","New_Name2")));
-        */
-        echo "\n testUpdateP Done !"
     }
     public function testDeleteP()
     {
-        /*
         $this->assertEquals(true,$this->gumballMachineInstance->DeleteP($this->gumballMachineInstance->GetIdP("New_Name1","New_Name2")));
-        */
-        echo "\n testDeleteP Done !"
     }
     public function testAffichageCoursAPI()
     {
-        /*
         $this->gumballMachineInstance->AffichageCours("After Insertion of Courses");
-        */
-        echo "\n testAffichageCoursAPI Done !"
     }
 }
