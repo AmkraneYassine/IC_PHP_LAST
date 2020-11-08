@@ -22,7 +22,7 @@ class GumballMachineTest extends TestCase
     {
          $this->gumballMachineInstance = new GumballMachine();
          $this->assertEquals(true, $this->gumballMachineInstance->InsertProfs());
-         $this->assertEquals(false, $this->gumballMachineInstance->InsertCours());
+         $this->assertEquals(true, $this->gumballMachineInstance->InsertCours());
     }
     
     public function testAffichageProfAVI()
@@ -46,7 +46,7 @@ class GumballMachineTest extends TestCase
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("Before Insertion of Courses"));
     }
     
-    /*
+    
     public function testInsertC()
     {
         $max__id1=$this->gumballMachineInstance->GetLastIDC();
@@ -66,7 +66,7 @@ class GumballMachineTest extends TestCase
     {
         $this->assertEquals(true,$this->gumballMachineInstance->DeleteP($this->gumballMachineInstance->GetIdP("AMKRANE","Yassine")));
     }
-    */
+    
     
     public function testAffichageCoursAPI()
     {
