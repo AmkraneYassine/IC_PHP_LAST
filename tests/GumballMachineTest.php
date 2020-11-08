@@ -43,10 +43,10 @@ class GumballMachineTest extends TestCase
     public function InsertCours()
     {
         $max__id1=$this->gumballMachineInstance->GetLastIDC();
-        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("IOT",'10', $this->gumballMachineInstance->GetLastIDP()))");
-        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("IA",'12', $this->gumballMachineInstance->GetLastIDP()))");
-        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("C++",'18', $this->gumballMachineInstance->GetLastIDP()))");
-        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("EDL",'30', $this->gumballMachineInstance->GetLastIDP()))");
+        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', $this->gumballMachineInstance->GetLastIDP()))");
+        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', $this->gumballMachineInstance->GetLastIDP()))");
+        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('Cpp','18', $this->gumballMachineInstance->GetLastIDP()))");
+        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', $this->gumballMachineInstance->GetLastIDP()))");
 	$max__id2=$this->gumballMachineInstance->GetLastIDP();
         $this->assertEquals($max__id1+4,$max__id2);
     }
@@ -82,7 +82,7 @@ class GumballMachineTest extends TestCase
     }
     public function testUpdateC()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->UpdateC("C++","30"));
+        $this->assertEquals(true,$this->gumballMachineInstance->UpdateC("Cpp","30"));
     }
     public function testDeleteP()
     {
