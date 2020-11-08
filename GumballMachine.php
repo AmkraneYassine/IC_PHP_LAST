@@ -65,7 +65,7 @@ class GumballMachine
 	    {
 	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 	       	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX','YYY', '1980-09-29','ZZZ')");
+		$bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX1','YYY1', '1980-09-29','ZZZ')");
         	
 
 	       echo "\n 0 - Insertions";
