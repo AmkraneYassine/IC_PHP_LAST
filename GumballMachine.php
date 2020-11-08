@@ -63,6 +63,7 @@ class GumballMachine
 	    try 
 	    {
 	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+		$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX1','YYY1', '29-09-1980','ZZZA')");
         	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX2','YYY2', '30-10-1981','ZZZB')");
         	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX3','YYY3', '29-09-1980','ZZZC')");
@@ -85,6 +86,7 @@ class GumballMachine
 	    try 
 	    {
 	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+		$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', GetIdP('XXX2','YYY2'))");
         	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', GetIdP('XXX1','YYY1'))");
         	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', GetIdP('XXX3','YYY3'))");
