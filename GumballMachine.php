@@ -1,9 +1,5 @@
 <?php
-//test
-class GumballMachine
-{
-	private $gumballs;
-	<?php
+
 //test
 class GumballMachine
 {
