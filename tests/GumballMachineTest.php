@@ -21,16 +21,6 @@ class GumballMachineTest extends TestCase
     public function setUp(): void
     {
         $this->gumballMachineInstance = new GumballMachine();
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ("XXX1","YYY1", "29-09-1980", "ZZZ1")");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ("XXX2","YYY2", "30-10-1981", "ZZZ2")");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ("XXX3","YYY3", "29-09-1980", "ZZZ3")");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ("XXX4","YYY4", "13-07-1991", "ZZZ4")");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ("AMKRANE","Yassine", "20-03-1993", "ZZZ5")");
-      
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("IOT","10", $this->gumballMachineInstance->GetIdP("XXX2","YYY2"))");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("IA","12", $this->gumballMachineInstance->GetIdP("XXX1","YYY1"))");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("C++","18", $this->gumballMachineInstance->GetIdP("XXX3","YYY3"))");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("EDL","30", $this->gumballMachineInstance->GetIdP("XXX3","YYY3"))");
     }
     
     public function testAffichageProfAVI()
