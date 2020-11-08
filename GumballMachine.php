@@ -80,7 +80,7 @@ class GumballMachine
 	    }
 	    catch(PDOException $e)
 	    {
-	        echo $sql . "<br>" . $e->getMessage();
+	        echo "<br>" . $e->getMessage();
 		return false;
 	    }
 	    
