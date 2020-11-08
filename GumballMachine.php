@@ -222,4 +222,24 @@ class GumballMachine
 		return false;
 	    }
 	}
+	
+	public function delete_all()
+	{
+	    try
+	    {
+	        //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql = "delete from cours";
+		$this->bdd->exec($sql);
+		$sql = "delete from prof";
+		$this->bdd->exec($sql);
+		echo "\n We Have delete all of Corse";
+		return true;
+	    }
+	    catch(PDOException $e)
+	    {
+	        echo $sql . "<br>" . $e->getMessage();
+		return false;
+	    }
+	}
 }
