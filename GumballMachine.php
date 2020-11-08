@@ -201,6 +201,25 @@ class GumballMachine
 	    }
 	}
 	
+	public function UpdateC($intitule, $duree , $id_prof)
+	{
+	    try
+	    {
+	        //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	        $sql = "update prof set intitule='$nom', duree='$prenom' where id='$id_prof'";
+	        $this->bdd->exec($sql);
+		echo "\n We Have a new Update of Corse";
+		return true;
+	    }
+	    catch(PDOException $e)
+	    {
+	        echo $sql . "<br>" . $e->getMessage();
+		return false;
+	    }
+	}
+	
+	
 	public function DeleteC($id)
 	{
 	    try
