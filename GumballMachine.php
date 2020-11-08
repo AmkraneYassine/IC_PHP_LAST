@@ -58,6 +58,13 @@ class GumballMachine
 			die('Erreur : ' . $e->getMessage());
 	    }
 	}
+	    
+	/*
+	function dropDB ()
+    	{
+        	$this->$bdd->exec('DROP DATABASE IF EXISTS '.self::DBNAME);
+    	}
+	*/
 
     	public function getDB()
     	{
@@ -258,12 +265,12 @@ class GumballMachine
 	    {
 	        //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		    $sql = "delete from cours";
-		    $this->bdd->exec($sql);
-		    $sql = "delete from prof";
-		    $this->bdd->exec($sql);
-		    echo "\n We Have delete all of Corse";
-		    return true;
+		$sql = "delete from cours";
+		$this->bdd->exec($sql);
+		$sql = "delete from prof";
+		$this->bdd->exec($sql);
+		echo "\n We Have delete all of Corse";
+		return true;
 	    }
 	    catch(PDOException $e)
 	    {
