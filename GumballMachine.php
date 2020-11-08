@@ -196,8 +196,11 @@ class GumballMachine
 	    {
 	        //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	        $sql = "delete from prof where id=$id";
+	        $sql = "delete * from prof";
+		// $sql = "delete from prof where id=$id";
 	        $this->bdd->exec($sql);
+		$sql = "delete * from cours";µ
+		$this->bdd->exec($sql);
 		echo "\n We Have a new insertion of Corse";
 		return true;
 	    }
