@@ -25,6 +25,21 @@ class GumballMachineTest extends TestCase
          $this->assertEquals(false,$this->gumballMachineInstance->InsertCours());
     }
     
+    	
+	public function testInsertProfs()
+	{  
+	    //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+		$this->gumballMachineInstance->getDB()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX1','YYY1', '29-09-1980','ZZZA')");
+        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX2','YYY2', '30-10-1981','ZZZB')");
+        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX3','YYY3', '29-09-1980','ZZZC')");
+        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX4','YYY4', '13-07-1991','ZZZD')");
+        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '20-03-1993', 'ZZZE')");
+
+	    echo "\n 0 - Insertions Profs";
+	   
+	}
+    
     public function testAffichageProfAVI()
     {
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("Before Insertion of Professors"));
@@ -40,6 +55,17 @@ class GumballMachineTest extends TestCase
     {
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("After Insertion of Professors"));
     }
+    
+    
+    public function testInsertCours()
+	{
+        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', GetIdP('XXX2','YYY2'))");
+        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', GetIdP('XXX1','YYY1'))");
+        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', GetIdP('XXX3','YYY3'))");
+        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', GetIdP('XXX3','YYY3'))");
+	    
+        echo "\n 0 - Insertions Cours";
+	}
     
     public function testAffichageCoursAVI()
     {
