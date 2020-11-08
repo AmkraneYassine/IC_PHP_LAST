@@ -136,17 +136,32 @@ class GumballMachine
 	}
 	public function GetLastIDP()
 	{
-	    $stmt = $this->bdd->prepare("select max(id) as maximum from prof");
-	    $stmt->execute();
-	    $user = $stmt->fetch();
-	    return $user['maximum'];
+		try 
+	    {
+			$stmt = $this->bdd->prepare("select max(id) as maximum from prof");
+			$stmt->execute();
+			$user = $stmt->fetch();
+			return $user['maximum'];
+		}
+		catch(PDOException $e)
+	    {
+			return 0;
+	    }
+		
 	}
 	public function GetLastIDC()
 	{
-	    $stmt = $this->bdd->prepare("select max(id) as maximum from cours");
-	    $stmt->execute();
-	    $user = $stmt->fetch();
-	    return $user['maximum'];
+		try 
+	    {
+			$stmt = $this->bdd->prepare("select max(id) as maximum from cours");
+			$stmt->execute();
+			$user = $stmt->fetch();
+			return $user['maximum'];
+		}
+		catch(PDOException $e)
+	    {
+			return 0;
+	    }
 	}
 	
 	//Insertion dans la table Cours
