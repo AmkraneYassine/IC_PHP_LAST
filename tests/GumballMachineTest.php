@@ -53,14 +53,6 @@ class GumballMachineTest extends TestCase
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("Before Insertion of Courses"));
     }
     
-    public function testInsertP()
-    {
-        $max__id1=$this->gumballMachineInstance->GetLastIDP();
-        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("PROF_TEST","Prof_Test", '29-09-1980', "TEST"));
-        $max__id2=$this->gumballMachineInstance->GetLastIDP();
-        $this->assertEquals($max__id1+1,$max__id2);
-    }
-    
     public function testInsertC()
     {
         $max__id1=$this->gumballMachineInstance->GetLastIDC();
