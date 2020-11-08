@@ -25,7 +25,7 @@ class GumballMachine
 		$root_password = "user01";
 		
 		try {
-			  $this->bdd = new PDO("mysql:host=$host; dbname=$dbname", $root, $root_password);
+			  // $this->bdd = new PDO("mysql:host=$host; dbname=$dbname", $root, $root_password);
 			  $this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php` ;") 
 			  or die(print_r($this->bdd->errorInfo(), true));
 		}
