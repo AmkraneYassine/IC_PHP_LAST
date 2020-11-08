@@ -68,7 +68,7 @@ class GumballMachineTest extends TestCase
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("After Insertion of Professors"));
     }
 
-    /*
+    
     public function testInsertC()
     {
         $max__id1=$this->gumballMachineInstance->GetLastIDC();
@@ -100,5 +100,5 @@ class GumballMachineTest extends TestCase
         $this->assertEquals(true, $this->gumballMachineInstance->delete_all());
         echo "Tous les enregistrements sont supprimés";
     }
-    */
+    
 }
