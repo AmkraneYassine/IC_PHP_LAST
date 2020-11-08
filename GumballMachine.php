@@ -186,16 +186,13 @@ class GumballMachine
 	    }
 	}
 	
-	public function DeleteP($id)
+	public function DeleteC($id)
 	{
 	    try
 	    {
 	        //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "delete * from cours";
-		$sql = "delete * from cours";
-		$this->bdd->exec($sql);
-	        $sql = "delete * from prof";
+		$sql = "delete from cours where id=$id";
 	        $this->bdd->exec($sql);
 		echo "\n We Have a new insertion of Corse";
 		return true;
