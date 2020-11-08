@@ -43,6 +43,10 @@ class GumballMachine
 		    $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_php;charset=utf8', 'user01', 'user01');
 		    /*print "Yes Dans le constructeur de BaseClass\n";*/
 		    $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		    $sql="'DROP table IF EXISTS cours";
+		    $this->bdd->exec($sql);
+		     $sql="'DROP table IF EXISTS prof";
+		    $this->bdd->exec($sql);
 		    $sql="CREATE TABLE  IF NOT EXISTS prof( id INT NOT NULL AUTO_INCREMENT , nom VARCHAR(25) NOT NULL , prenom VARCHAR(25) NOT NULL , date_naissance DATE NOT NULL , lieu_naissance TEXT NOT NULL , PRIMARY KEY (id)) ";
 		    $this->bdd->exec($sql);
 		    $sql="CREATE TABLE  IF NOT EXISTS cours( id INT NOT NULL AUTO_INCREMENT , intitule VARCHAR(50) NOT NULL , duree INT NOT NULL , id_prof INT NOT NULL , PRIMARY KEY (id), FOREIGN KEY (id_prof) REFERENCES prof(id) on delete cascade) ";
@@ -58,52 +62,7 @@ class GumballMachine
 	    }
 	}
 	
-	public function InsertProfs()
-	{  
-	    try 
-	    {
-	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
-		$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX1','YYY1', '29-09-1980','ZZZA')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX2','YYY2', '30-10-1981','ZZZB')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX3','YYY3', '29-09-1980','ZZZC')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX4','YYY4', '13-07-1991','ZZZD')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '20-03-1993', 'ZZZE')");
-
-	       echo "\n 0 - Insertions Profs";
-	       return true;
-	    }
-	    catch(PDOException $e)
-	    {
-	        echo "<br>" . $e->getMessage();
-		return false;
-	    }
-	    
-	}
-	
-	public function InsertCours()
-	{  
-	    try 
-	    {
-	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
-		$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', GetIdP('XXX2','YYY2'))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', GetIdP('XXX1','YYY1'))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', GetIdP('XXX3','YYY3'))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', GetIdP('XXX3','YYY3'))");
-	       echo "\n 0 - Insertions Cours";
-	       return true;
-	    }
-	    catch(PDOException $e)
-	    {
-	        echo "<br>" . $e->getMessage();
-		return false;
-	    }
-	    
-	}
-	
-        	
-    	public function getDB()
+   	public function getDB()
     	{
    	     	return $this->bdd;
    	 }
@@ -117,6 +76,8 @@ class GumballMachine
 		$this->setGumballs($this->getGumballs() - 1);
 	}
 	
+	
+	
 	public function AffichageProf($etat)
 	{
 	    print("\n".$etat."\n");
@@ -129,6 +90,7 @@ class GumballMachine
 		return true;
 	    
 	}
+	
 	
 	public function AffichageCours($etat)
 	{
