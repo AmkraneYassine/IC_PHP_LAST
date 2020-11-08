@@ -63,18 +63,17 @@ class GumballMachine
 	{  
 	    try 
 	    {
-	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
-	       	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX1','YYY1', '1980-09-29','ZZZA')");
-        	$bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX2','YYY2', '30-10-1981','ZZZB')");
-        	$bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX3','YYY3', '29-09-1980','ZZZC')");
-        	$bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX4','YYY4', '13-07-1991','ZZZD')");
-        	$bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '20-03-1993', 'ZZZE')");
+	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', ''); 
+		$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX1','YYY1', '1980-09-29','ZZZA')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX2','YYY2', '30-10-1981','ZZZB')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX3','YYY3', '29-09-1980','ZZZC')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX4','YYY4', '13-07-1991','ZZZD')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '20-03-1993', 'ZZZE')");
       	
-        	$bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', $this->gumballMachineInstance->GetIdP('XXX2','YYY2'))");
-        	$bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', $this->gumballMachineInstance->GetIdP('XXX1','YYY1'))");
-        	$bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', $this->gumballMachineInstance->GetIdP('XXX3','YYY3'))");
-        	$bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', $this->gumballMachineInstance->GetIdP('XXX3','YYY3'))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', $this->gumballMachineInstance->GetIdP('XXX2','YYY2'))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', $this->gumballMachineInstance->GetIdP('XXX1','YYY1'))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', $this->gumballMachineInstance->GetIdP('XXX3','YYY3'))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', $this->gumballMachineInstance->GetIdP('XXX3','YYY3'))");
 
 	       echo "\n 0 - Insertions";
 	       return true;
