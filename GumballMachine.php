@@ -81,7 +81,7 @@ class GumballMachine
 	    
 	}
 	
-		public function InsertProfs()
+	public function InsertCours()
 	{  
 	    try 
 	    {
