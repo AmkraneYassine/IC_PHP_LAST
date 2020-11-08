@@ -94,12 +94,11 @@ class GumballMachineTest extends TestCase
     {
         $this->assertEquals(true, $this->gumballMachineInstance->AffichageCours("After Insertion of Courses"));
     }
-    */
-	
+    
     public function testDelete_All()
     {
         $this->assertEquals(true, $this->gumballMachineInstance->delete_all());
         echo "Tous les enregistrements sont supprimés";
     }
-    
+    */
 }
