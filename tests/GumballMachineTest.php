@@ -66,6 +66,6 @@ class GumballMachineTest extends TestCase
     }
     public function tearDown(): void
     {
-        $this->$bdd->exec('DROP DATABASE IF EXISTS '.self::DBNAME);
+        $this->tearDown();
     }
 }
