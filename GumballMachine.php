@@ -57,7 +57,7 @@ class GumballMachine
 	    }
 	}
 	    
-	function __destruct ()
+	function dropDB ()
     	{
         	$this->$bdd->exec('DROP DATABASE IF EXISTS '.self::DBNAME);
     	}
