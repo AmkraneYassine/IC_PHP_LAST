@@ -201,13 +201,13 @@ class GumballMachine
 	    }
 	}
 	
-	public function UpdateC($intitule, $duree , $id_prof)
+	public function UpdateC($intitule, $duree)
 	{
 	    try
 	    {
 	        //$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 	        $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	        $sql = "update prof set intitule='$nom', duree='$prenom' where id='$id_prof'";
+	        $sql = "update prof set duree='$duree' where intitule='$intitule'";
 	        $this->bdd->exec($sql);
 		echo "\n We Have a new Update of Corse";
 		return true;
