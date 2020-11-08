@@ -66,7 +66,7 @@ class GumballMachineTest extends TestCase
     }
     
     
-    public function Droptest()
+    public function testDelete_All()
     {
         this->assertEquals(true, $this->gumballMachineInstance->delete_all());
         echo "Tous les enregistrements sont supprimés";
