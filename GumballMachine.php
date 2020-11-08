@@ -199,8 +199,6 @@ class GumballMachine
 	        $sql = "delete * from prof";
 		// $sql = "delete from prof where id=$id";
 	        $this->bdd->exec($sql);
-		$sql = "delete * from cours";µ
-		$this->bdd->exec($sql);
 		echo "\n We Have a new insertion of Corse";
 		return true;
 	    }
