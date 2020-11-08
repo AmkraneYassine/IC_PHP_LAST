@@ -12,22 +12,22 @@ class GumballMachine
 	/* Paramètre de connexion à la base de données*/
 	
 	private $servername="192.168.250.3";
-	private $db_name="user01_test_php"; //a remplir
+	private $db_name="user01_test_phpp"; //a remplir
 	private $db_user="user01"; //a remplir
 	private $db_pass="user01"; //a remplir
 	
 	
 	function __construct()
 	{
-		/*
-		$dbname = "user01_test_php" ;
+		
+		$dbname = "user01_test_phpp" ;
 		$host = "192.168.250.3";
 		$root = "user01";
 		$root_password = "user01";
 		
 		try {
 			$this->bdd = new PDO("mysql:host=$host; dbname=$dbname", $root, $root_password);
-			$this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php` ;") 
+			$this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_phpp` DEFAULT CHARACTER SET utf8 ; USE `user01_test_phpp` ;") 
 				or die(print_r($this->bdd->errorInfo(), true));
 			$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    	$sql="CREATE TABLE  IF NOT EXISTS prof( id INT NOT NULL AUTO_INCREMENT , nom VARCHAR(25) NOT NULL , prenom VARCHAR(25) NOT NULL , date_naissance DATE NOT NULL , lieu_naissance TEXT NOT NULL , PRIMARY KEY (id)) ";
@@ -39,7 +39,7 @@ class GumballMachine
 			die("DB ERROR: " . $e->getMessage());
 		}
 		
-		*/
+	/*
 	    try
 	    {
 		    // "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
@@ -62,7 +62,7 @@ class GumballMachine
 			die('Erreur : ' . $e->getMessage());
 	    }
 	
-		
+		*/
 	}
 	        	
     	public function getDB()
