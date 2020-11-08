@@ -22,9 +22,10 @@ class GumballMachineTest extends TestCase
     {
         $this->gumballMachineInstance = new GumballMachine();
         $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX1","YYY1", "29-09-1980", "ZZZ1"));
-        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX2","YYY2", "30-10-1981", "ZZZ1"));
-        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX3","YYY3", "29-09-1980", "ZZZ1"));
-        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX4","YYY4", "29-09-1980", "ZZZ1"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX2","YYY2", "30-10-1981", "ZZZ2"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX3","YYY3", "29-09-1980", "ZZZ3"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX4","YYY4", "13-07-1991", "ZZZ4"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("AMKRANE","Yassine", "20-03-1993", "ZZZ5"));
         $this->assertEquals(true, $this->gumballMachineInstance->InsertC("IOT","10", $this->gumballMachineInstance->GetIdP("XXX2","YYY2")));
         $this->assertEquals(true, $this->gumballMachineInstance->InsertC("IA","12", $this->gumballMachineInstance->GetIdP("XXX1","YYY1")));
         $this->assertEquals(true, $this->gumballMachineInstance->InsertC("C++","18", $this->gumballMachineInstance->GetIdP("XXX3","YYY3")));
@@ -69,15 +70,15 @@ class GumballMachineTest extends TestCase
     }
     public function testUpdateP()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->UpdateP("Nolack","Fabrice",$this->gumballMachineInstance->'GetIdP("XXX4","YYY4")));
+        $this->assertEquals(true,$this->gumballMachineInstance->UpdateP("Nolack","Fabrice",$this->gumballMachineInstance->GetIdP("XXX4","YYY4")));
     }
     public function testUpdateC()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->UpdateC("C++","30",'29'));
+        $this->assertEquals(true,$this->gumballMachineInstance->UpdateC("C++","30"));
     }
     public function testDeleteP()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->DeleteP('32'));
+        $this->assertEquals(true,$this->gumballMachineInstance->DeleteP($this->gumballMachineInstance->GetIdP("PROF_TEST","Prof_Test")));
     }
     public function testAffichageCoursAPI()
     {
