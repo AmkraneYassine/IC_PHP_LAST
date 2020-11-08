@@ -86,10 +86,10 @@ class GumballMachine
 	    try 
 	    {
 	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
-		$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', "13"))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', "13"))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', "13"))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', "13"))");
+		$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', GetLastIDP()))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', GetLastIDP()))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', GetLastIDP()))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', GetLastIDP()))");
 
 	       echo "\n 0 - Insertions Cours";
 	       return true;
