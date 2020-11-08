@@ -17,7 +17,7 @@ class GumballMachineTest extends TestCase
     private $duree="***";    //a remplir
     
         
-    public function setUp()
+    public function setUp() : void
     {
         $this->gumballMachineInstance = new GumballMachine();
     }
