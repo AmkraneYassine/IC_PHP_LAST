@@ -262,6 +262,8 @@ class GumballMachine
 		$this->bdd->exec($sql);
 		$sql = "delete from prof";
 		$this->bdd->exec($sql);
+		$sql = "DROP SCHEMA IF EXISTS user01_test_php";
+		$this->bdd->exec($sql);
 		echo "\n We Have delete all of Corse";
 		return true;
 	    }
