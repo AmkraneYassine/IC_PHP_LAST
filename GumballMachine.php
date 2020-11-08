@@ -42,8 +42,9 @@ class GumballMachine
 	    {
 		    // "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
 		    // $sql = "DROP SCHEMA IF EXISTS user01_test_php";
-		    $this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php` ;") 
-				or die(print_r($this->bdd->errorInfo(), true));
+		    // $this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php` ;") or die(print_r($this->bdd->errorInfo(), true));
+		    $this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8;");
+		    $this->bdd->exec( "USE `user01_test_php` ;") ;
 		    $this->bdd = new PDO("mysql:host=192.168.250.3;dbname=user01_test_php;charset=utf8", 'user01', 'user01');
 		    
 		    // print "Yes Dans le constructeur de BaseClass\n";
