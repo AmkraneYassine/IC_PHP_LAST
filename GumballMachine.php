@@ -2,7 +2,6 @@
 //test
 class GumballMachine
 {
-
 	private $gumballs;
 	
 	private $bdd;
@@ -58,14 +57,51 @@ class GumballMachine
 			die('Erreur : ' . $e->getMessage());
 	    }
 	}
-	    
-	/*
-	function dropDB ()
-    	{
-        	$this->$bdd->exec('DROP DATABASE IF EXISTS '.self::DBNAME);
-    	}
-	*/
+	
+	public function InsertProfs()
+	{  
+	    try 
+	    {
+	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+		$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX1','YYY1', '1980-09-29','ZZZA')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX2','YYY2', '1981-10-30','ZZZB')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX3','YYY3', '1980-09-29','ZZZC')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX4','YYY4', '1991-07-13','ZZZD')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '1993-03-20', 'ZZZE')")
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '1993-03-20', 'ZZZE')");
 
+	       echo "\n 0 - Insertions Profs";
+	       return true;
+	    }
+	    catch(PDOException $e)
+	    {
+	        echo "<br>" . $e->getMessage();
+		return false;
+	    }
+	    
+	}
+	
+	public function InsertCours()
+	{  
+	    try 
+	    {
+	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+		$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', GetIdP('XXX2','YYY2'))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', GetIdP('XXX1','YYY1'))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', GetIdP('XXX3','YYY3'))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', GetIdP('XXX3','YYY3'))");
+	       echo "\n 0 - Insertions Cours";
+	       return true;
+	    }
+	    catch(PDOException $e)
+	    {
+	        echo "<br>" . $e->getMessage();
+		return false;
+	    }
+	    
+	}
+	
+        	
     	public function getDB()
     	{
    	     	return $this->bdd;
@@ -74,7 +110,6 @@ class GumballMachine
 	{
 		$this->gumballs = $amount;
 	}
-
 	
 	public function turnWheel()
 	{
