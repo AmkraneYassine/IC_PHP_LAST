@@ -3,7 +3,6 @@
 class GumballMachine
 {
 
-	
 	private $gumballs;
 	
 	private $bdd;
@@ -21,44 +20,39 @@ class GumballMachine
 	function __construct()
 	{
 		/*
-		
 		$dbname = "user01_test_php" ;
 		$host = "192.168.250.3";
 		$root = "user01";
 		$root_password = "user01";
 		
 		try {
-			// $this->bdd = new PDO("mysql:host=$host; dbname=$dbname", $root, $root_password);
-			$this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php` ;") 
-				or die(print_r($this->bdd->errorInfo(), true));
-			$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		    	$sql="CREATE TABLE  IF NOT EXISTS prof( id INT NOT NULL AUTO_INCREMENT , nom VARCHAR(25) NOT NULL , prenom VARCHAR(25) NOT NULL , date_naissance DATE NOT NULL , lieu_naissance TEXT NOT NULL , PRIMARY KEY (id)) ";
-		    	$this->bdd->exec($sql);
-		    	$sql="CREATE TABLE  IF NOT EXISTS cours( id INT NOT NULL AUTO_INCREMENT , intitule VARCHAR(50) NOT NULL , duree INT NOT NULL , id_prof INT NOT NULL , PRIMARY KEY (id), FOREIGN KEY (id_prof) REFERENCES prof(id) on delete cascade) ";
-		    	$this->bdd->exec($sql);
+			  $this->bdd = new PDO("mysql:host=$host; dbname=$dbname", $root, $root_password);
+			  $this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php` ;") 
+			  or die(print_r($this->bdd->errorInfo(), true));
 		}
 		catch (PDOException $e) {
-			die("DB ERROR: " . $e->getMessage());
+   		 die("DB ERROR: " . $e->getMessage());
 		}
-		
 		*/
+		
 	    try
 	    {
 		    // "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
 		    // $sql = "DROP SCHEMA IF EXISTS user01_test_php";
 		    // $this->bdd->exec('DROP SCHEMA IF EXISTS user01_test_php');
-		    $sql="CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php`";
-		    $this->bdd->exec($sql) or die(print_r($this->bdd->errorInfo(), true));
-		    $this->bdd = new PDO("mysql:host=192.168.250.3;dbname=user01_test_php;charset=utf8", 'user01', 'user01');
-		    // print "Yes Dans le constructeur de BaseClass\n";
+		    // $this->bdd->exec("CREATE SCHEMA IF NOT EXISTS `user01_test_php` DEFAULT CHARACTER SET utf8 ; USE `user01_test_php` ;")  or die(print_r($this->bdd->errorInfo(), true));
+		    $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_php;charset=utf8', 'user01', 'user01');
+		    /*print "Yes Dans le constructeur de BaseClass\n";*/
 		    $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    $sql="CREATE TABLE  IF NOT EXISTS prof( id INT NOT NULL AUTO_INCREMENT , nom VARCHAR(25) NOT NULL , prenom VARCHAR(25) NOT NULL , date_naissance DATE NOT NULL , lieu_naissance TEXT NOT NULL , PRIMARY KEY (id)) ";
 		    $this->bdd->exec($sql);
 		    $sql="CREATE TABLE  IF NOT EXISTS cours( id INT NOT NULL AUTO_INCREMENT , intitule VARCHAR(50) NOT NULL , duree INT NOT NULL , id_prof INT NOT NULL , PRIMARY KEY (id), FOREIGN KEY (id_prof) REFERENCES prof(id) on delete cascade) ";
 		    $this->bdd->exec($sql);
 		    
+		    
+		    
 	    }
-	    
+	
 	    catch (Exception $e)
 	    {
 			die('Erreur : ' . $e->getMessage());
