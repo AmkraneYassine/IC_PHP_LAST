@@ -65,10 +65,11 @@ class GumballMachineTest extends TestCase
         $this->assertEquals(true, $this->gumballMachineInstance->AffichageCours("After Insertion of Courses"));
     }
     
-     public function Droptest()
+    /*
+    public function Droptest()
     {
         $this->gumballMachineInstance->dropDB();
          echo "DB supprimée";
     }
-    
+    */
 }
