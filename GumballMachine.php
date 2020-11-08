@@ -37,10 +37,6 @@ class GumballMachine
 		
 	    try
 	    {
-		    $sql = "delete * from cours";
-		    $this->bdd->exec($sql);
-		    $sql = "delete * from prof";
-		    $this->bdd->exec($sql);
 		    // "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
 		    // $sql = "DROP SCHEMA IF EXISTS user01_test_php";
 		    // $this->bdd->exec('DROP SCHEMA IF EXISTS user01_test_php');
@@ -51,6 +47,10 @@ class GumballMachine
 		    $sql="CREATE TABLE  IF NOT EXISTS prof( id INT NOT NULL AUTO_INCREMENT , nom VARCHAR(25) NOT NULL , prenom VARCHAR(25) NOT NULL , date_naissance DATE NOT NULL , lieu_naissance TEXT NOT NULL , PRIMARY KEY (id)) ";
 		    $this->bdd->exec($sql);
 		    $sql="CREATE TABLE  IF NOT EXISTS cours( id INT NOT NULL AUTO_INCREMENT , intitule VARCHAR(50) NOT NULL , duree INT NOT NULL , id_prof INT NOT NULL , PRIMARY KEY (id), FOREIGN KEY (id_prof) REFERENCES prof(id) on delete cascade) ";
+		    $this->bdd->exec($sql);
+		    $sql = "delete * from cours";
+		    $this->bdd->exec($sql);
+		    $sql = "delete * from prof";
 		    $this->bdd->exec($sql);
 		    
 	    }
