@@ -43,10 +43,10 @@ class GumballMachineTest extends TestCase
     public function InsertCours()
     {
         $max__id1=$this->gumballMachineInstance->GetLastIDC();
-        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', $this->gumballMachineInstance->GetLastIDP()))");
-        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', $this->gumballMachineInstance->GetLastIDP()))");
-        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', $this->gumballMachineInstance->GetLastIDP()))");
-        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', $this->gumballMachineInstance->GetLastIDP()))");
+        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("IOT",'10', $this->gumballMachineInstance->GetLastIDP()))");
+        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("IA",'12', $this->gumballMachineInstance->GetLastIDP()))");
+        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("C++",'18', $this->gumballMachineInstance->GetLastIDP()))");
+        $this->gumballMachineInstance->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ("EDL",'30', $this->gumballMachineInstance->GetLastIDP()))");
 	$max__id2=$this->gumballMachineInstance->GetLastIDP();
         $this->assertEquals($max__id1+4,$max__id2);
     }
@@ -88,13 +88,14 @@ class GumballMachineTest extends TestCase
     {
         $this->assertEquals(true,$this->gumballMachineInstance->DeleteP($this->gumballMachineInstance->GetIdP("AMKRANE","Yassine")));
     }
-    */
+    
 	
     public function testAffichageCoursAPI()
     {
         $this->assertEquals(true, $this->gumballMachineInstance->AffichageCours("After Insertion of Courses"));
     }
-        
+    */
+	
     public function testDelete_All()
     {
         $this->assertEquals(true, $this->gumballMachineInstance->delete_all());
