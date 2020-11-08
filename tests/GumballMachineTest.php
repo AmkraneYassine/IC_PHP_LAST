@@ -20,7 +20,7 @@ class GumballMachineTest extends TestCase
 
     public function setUp(): void
     {
-        $this->assertEquals(true, $this->gumballMachineInstance = new GumballMachine());
+        $this->gumballMachineInstance = new GumballMachine();
         $this->assertEquals(true, $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "XXX1","YYY1", "29-09-1980", "ZZZ1"));
         $this->assertEquals(true, $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "XXX2","YYY2", "30-10-1981", "ZZZ2"));
         $this->assertEquals(true, $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "XXX3","YYY3", "29-09-1980", "ZZZ3"));
