@@ -3,7 +3,7 @@
 class GumballMachine
 {
 
-	/*
+	
 	private $gumballs;
 	
 	private $bdd;
@@ -20,6 +20,7 @@ class GumballMachine
 	
 	function __construct()
 	{
+		/*
 		
 		$dbname = "user01_test_php" ;
 		$host = "192.168.250.3";
