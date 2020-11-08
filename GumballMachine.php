@@ -24,7 +24,7 @@ class GumballMachine
 		
 		try {
 			$dbh = new PDO("mysql:host=$host", $root, $root_password);
-			$dbh->exec("CREATE DATABASE `$db`;") 
+			$dbh->exec("CREATE DATABASE IF NOT EXISTS `$db`;") 
 				or die(print_r($dbh->errorInfo(), true));
 			$this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sql="CREATE TABLE  IF NOT EXISTS prof( id INT NOT NULL AUTO_INCREMENT , nom VARCHAR(25) NOT NULL , prenom VARCHAR(25) NOT NULL , date_naissance DATE NOT NULL , lieu_naissance TEXT NOT NULL , PRIMARY KEY (id)) ";
