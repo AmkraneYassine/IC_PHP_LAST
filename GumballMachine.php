@@ -70,10 +70,10 @@ class GumballMachine
         	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX4','YYY4', '1991-07-13','ZZZD')");
         	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '1993-03-20', 'ZZZE')");
       	
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', $this->gumballMachineInstance->GetIdP('XXX2','YYY2'))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', $this->gumballMachineInstance->GetIdP('XXX1','YYY1'))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', $this->gumballMachineInstance->GetIdP('XXX3','YYY3'))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', $this->gumballMachineInstance->GetIdP('XXX3','YYY3'))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', $this->GetIdP('XXX2','YYY2'))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', $this->GetIdP('XXX1','YYY1'))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', $this->GetIdP('XXX3','YYY3'))");
+        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', $this->GetIdP('XXX3','YYY3'))");
 
 	       echo "\n 0 - Insertions";
 	       return true;
