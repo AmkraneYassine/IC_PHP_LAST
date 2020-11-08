@@ -1,12 +1,8 @@
 <?php
 
-/* hello */
-
-use PHPUnit\Framework\TestCase;
-
 require 'GumballMachine.php';
 
-class GumballMachineTest extends TestCase
+class GumballMachineTest extends PHPUnit_Framework_TestCase
 {
     public $gumballMachineInstance;
     //prof
@@ -17,22 +13,11 @@ class GumballMachineTest extends TestCase
     // cours
     private $intitule="***"; //a remplir
     private $duree="***";    //a remplir
-
-    public function setUp(): void
+    
+        
+    public function setUp()
     {
-         $this->gumballMachineInstance = new GumballMachine();
-    }
-	
-    public function testInsertProfs()
-    {
-	$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX1','YYY1', '1980-09-29','ZZZA')");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX2','YYY2', '1981-10-30','ZZZB')");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX3','YYY3', '1980-09-29','ZZZC')");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX4','YYY4', '1991-07-13','ZZZD')");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '1993-03-20', 'ZZZE')");
-
-
-	echo "\n 0 - Insertions Profs";
+        $this->gumballMachineInstance = new GumballMachine();
     }
     
     public function testAffichageProfAVI()
@@ -48,53 +33,24 @@ class GumballMachineTest extends TestCase
     }
     public function testAffichageProfAPI()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("After Insertion of Professors"));
+        /*à completer*/
     }
-    
-    
-    public function testInsertCours()
-	{
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', GetIdP('XXX2','YYY2'))");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', GetIdP('XXX1','YYY1'))");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', GetIdP('XXX3','YYY3'))");
-        $this->gumballMachineInstance->getDB()->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', GetIdP('XXX3','YYY3'))");
-	    
-        echo "\n 0 - Insertions Cours";
-	}
+     
     
     public function testAffichageCoursAVI()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("Before Insertion of Courses"));
+        /*à completer*/
     }
-    
     public function testInsertC()
     {
-        $max__id1=$this->gumballMachineInstance->GetLastIDC();
-        $this->assertEquals(true, $this->gumballMachineInstance->InsertC("PHP","12", $this->gumballMachineInstance->GetIdP("XXX3","YYY3")));
-        $max__id2=$this->gumballMachineInstance->GetLastIDC();
-        $this->assertEquals($max__id1+1,$max__id2);
-    }
-    public function testUpdateP()
-    {
-        $this->assertEquals(true,$this->gumballMachineInstance->UpdateP("Nolack","Fabrice",$this->gumballMachineInstance->GetIdP('XXX4','YYY4')));
-    }
-    public function testUpdateC()
-    {
-        $this->assertEquals(true,$this->gumballMachineInstance->UpdateC("C++","30"));
-    }
-    public function testDeleteP()
-    {
-        $this->assertEquals(true,$this->gumballMachineInstance->DeleteP($this->gumballMachineInstance->GetIdP("AMKRANE","Yassine")));
+       
+        /*à completer*/
+        
     }
     public function testAffichageCoursAPI()
     {
-        $this->assertEquals(true, $this->gumballMachineInstance->AffichageCours("After Insertion of Courses"));
+        /*à completer*/
     }
-    
-    
-    public function testDelete_All()
-    {
-        $this->assertEquals(true, $this->gumballMachineInstance->delete_all());
-        echo "Tous les enregistrements sont supprimés";
-    }
+
+   
 }
