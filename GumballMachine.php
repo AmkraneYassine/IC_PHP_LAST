@@ -55,7 +55,7 @@ class GumballMachine
 	    {
 			die('Erreur : ' . $e->getMessage());
 	    }
-	    
+	}
 	    
 	function __destruct ()
     	{
