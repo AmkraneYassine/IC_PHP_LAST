@@ -68,11 +68,7 @@ class GumballMachineTest extends TestCase
      public function Droptest()
     {
         $this->gumballMachineInstance->dropDB();
-    }
-    
-     public function testAffichageCoursAPI()
-    {
-        $this->assertEquals(true, $this->gumballMachineInstance->AffichageCours("After Drop Table"));
+         echo "DB supprimée";
     }
     
 }
