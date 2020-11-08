@@ -29,11 +29,11 @@ class GumballMachineTest extends TestCase
 	public function testInsertProfs()
 	{  
 	    
-		$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX1','YYY1', '1980-09-29','ZZZA')");
-        	$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX2','YYY2', '1981-10-30','ZZZB')");
-        	$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX3','YYY3', '1980-09-29','ZZZC')");
-        	$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX4','YYY4', '1991-07-13','ZZZD')");
-        	$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '1993-03-20', 'ZZZE')");
+		$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, lieu_naissance) VALUES ('XXX1','YYY1', 'ZZZA')");
+        	$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, lieu_naissance) VALUES ('XXX2','YYY2', 'ZZZB')");
+        	$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, lieu_naissance) VALUES ('XXX3','YYY3', 'ZZZC')");
+        	$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, lieu_naissance) VALUES ('XXX4','YYY4', 'ZZZD')");
+        	$this->gumballMachineInstance->getDB()->exec("INSERT INTO prof (nom, prenom, lieu_naissance) VALUES ('AMKRANE','Yassine', 'ZZZE')");
 
 	    echo "\n 0 - Insertions Profs";
 	   
