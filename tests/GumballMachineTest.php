@@ -21,7 +21,8 @@ class GumballMachineTest extends TestCase
     public function setUp(): void
     {
          $this->gumballMachineInstance = new GumballMachine();
-         $this->assertEquals(false,$this->gumballMachineInstance->InsertData());
+         $this->assertEquals(true,$this->gumballMachineInstance->InsertData());
+         $this->assertEquals(true,$this->gumballMachineInstance->InsertCours());
     }
     
     public function testAffichageProfAVI()
