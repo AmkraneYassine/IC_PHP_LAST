@@ -3,6 +3,7 @@
 class GumballMachine
 {
 
+	/*
 	private $gumballs;
 	
 	private $bdd;
@@ -39,7 +40,7 @@ class GumballMachine
 			die("DB ERROR: " . $e->getMessage());
 		}
 		
-	/*
+		*/
 	    try
 	    {
 		    // "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
@@ -62,7 +63,7 @@ class GumballMachine
 			die('Erreur : ' . $e->getMessage());
 	    }
 	
-		*/
+		
 	}
 	        	
     	public function getDB()
