@@ -13,7 +13,6 @@ class GumballMachine
 	private $db_user="user01"; //a remplir
 	private $db_pass="user01"; //a remplir
 	
-	
 	function __construct()
 	{
 		/*
@@ -35,14 +34,13 @@ class GumballMachine
 		catch (PDOException $e) {
 			die("DB ERROR: " . $e->getMessage());
 		}
-		*/
-		
+	
 		
 	    try
 	    {
 		    // "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
 		    $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_php;charset=utf8', 'user01', 'user01');
-		    /*print "Yes Dans le constructeur de BaseClass\n";*/
+		    // print "Yes Dans le constructeur de BaseClass\n";
 		    $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    $sql="CREATE TABLE  IF NOT EXISTS prof( id INT NOT NULL AUTO_INCREMENT , nom VARCHAR(25) NOT NULL , prenom VARCHAR(25) NOT NULL , date_naissance DATE NOT NULL , lieu_naissance TEXT NOT NULL , PRIMARY KEY (id)) ";
 		    $this->bdd->exec($sql);
@@ -54,9 +52,38 @@ class GumballMachine
 	    catch (Exception $e)
 	    {
 			die('Erreur : ' . $e->getMessage());
+		}
+	*/
+		
+		$db = "test" ;
+		$host = "192.168.250.3";
+		$root = "user01";
+		$root_password = "user01";
+		
+		try {
+			  $dbh = new PDO("mysql:host=$host", $root, $root_password);
+			  $dbh->exec("CREATE DATABASE `$db`;")
+			  or die(print_r($dbh->errorInfo(), true));
+		}
+		catch (PDOException $e) {
+   		 die("DB ERROR: " . $e->getMessage());
+		}
+		
+	    try
+	    {
+		// "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
+	        $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=test;charset=utf8', 'user01', 'user01');
+	        //print "Yes Dans le constructeur de BaseClass\n";
+	    }
+	    
+	    catch (Exception $e)
+	    {
+	        die('Erreur : ' . $e->getMessage());
 	    }
 	    
 	}
+	
+	
 	        	
     	public function getDB()
     	{
