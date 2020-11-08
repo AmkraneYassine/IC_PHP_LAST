@@ -72,7 +72,8 @@ class GumballMachineTest extends TestCase
     public function testAffichageProfAPI()
     {
         $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("After Insertion of Professors"));
-
+    }
+	
     public function testInsertC()
     {
         $max__id1=$this->gumballMachineInstance->GetLastIDC();
@@ -96,8 +97,7 @@ class GumballMachineTest extends TestCase
     {
         $this->assertEquals(true, $this->gumballMachineInstance->AffichageCours("After Insertion of Courses"));
     }
-    
-    
+        
     public function testDelete_All()
     {
         $this->assertEquals(true, $this->gumballMachineInstance->delete_all());
