@@ -55,7 +55,7 @@ class GumballMachine
 		}
 	*/
 		
-		$db = "user01_test_phpp" ;
+		$db = "user01_test_php" ;
 		$host = "192.168.250.3";
 		$root = "user01";
 		$root_password = "user01";
@@ -68,18 +68,6 @@ class GumballMachine
 		catch (PDOException $e) {
    		 die("DB ERROR: " . $e->getMessage());
 		}
-		
-	    try
-	    {
-		// "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
-	        $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_phpp;charset=utf8', 'user01', 'user01');
-	        //print "Yes Dans le constructeur de BaseClass\n";
-	    }
-	    
-	    catch (Exception $e)
-	    {
-	        die('Erreur : ' . $e->getMessage());
-	    }
 	    
 	}
 	
