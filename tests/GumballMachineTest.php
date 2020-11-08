@@ -48,7 +48,7 @@ class GumballMachineTest extends TestCase
     public function testInsertC()
     {
         $max__id1=$this->gumballMachineInstance->GetLastIDC();
-        $this->assertEquals(true, $this->gumballMachineInstance->InsertC("PHP","12", $this->gumballMachineInstance->GetIdP("AMKRANE","Yassine")));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertC("PHP","12", $this->gumballMachineInstance->GetIdP("XX33","YYY3")));
         $max__id2=$this->gumballMachineInstance->GetLastIDC();
         $this->assertEquals($max__id1+1,$max__id2);
     }
@@ -62,7 +62,7 @@ class GumballMachineTest extends TestCase
     }
     public function testDeleteP()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->DeleteP($this->gumballMachineInstance->GetIdP("PROF_TEST","Prof_Test")));
+        $this->assertEquals(true,$this->gumballMachineInstance->DeleteP($this->gumballMachineInstance->GetIdP("AMKRANE","Yassine")));
     }
     public function testAffichageCoursAPI()
     {
