@@ -21,10 +21,10 @@ class GumballMachineTest extends TestCase
     public function setUp(): void
     {
         $this->gumballMachineInstance = new GumballMachine();
-        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX1","YYY1", "29-09-1980", "ZZZ1"));
-        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX2","YYY2", "30-10-1981", "ZZZ2"));
-        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX3","YYY3", "29-09-1980", "ZZZ3"));
-        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX4","YYY4", "13-07-1991", "ZZZ4"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX1","YYY1", '29-09-1980', "ZZZ1"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX2","YYY2", '30-10-1981', "ZZZ2"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX3","YYY3", '29-09-1980', "ZZZ3"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("XXX4","YYY4", '13-07-1991', "ZZZ4"));
         $this->assertEquals(true, $this->gumballMachineInstance->InsertP("AMKRANE","Yassine", "20-03-1993", "ZZZ5"));
         $this->assertEquals(true, $this->gumballMachineInstance->InsertC("IOT","10", $this->gumballMachineInstance->GetIdP("XXX2","YYY2")));
         $this->assertEquals(true, $this->gumballMachineInstance->InsertC("IA","12", $this->gumballMachineInstance->GetIdP("XXX1","YYY1")));
@@ -56,7 +56,7 @@ class GumballMachineTest extends TestCase
     public function testInsertP()
     {
         $max__id1=$this->gumballMachineInstance->GetLastIDP();
-        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("PROF_TEST","Prof_Test", "29-09-1980", "TEST"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP("PROF_TEST","Prof_Test", '29-09-1980', "TEST"));
         $max__id2=$this->gumballMachineInstance->GetLastIDC();
         $this->assertEquals($max__id1+1,$max__id2);
     }
