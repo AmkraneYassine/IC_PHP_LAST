@@ -22,15 +22,15 @@ class GumballMachineTest extends TestCase
     {
         $this->gumballMachineInstance = new GumballMachine();
         
-        $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "XXX1","YYY1", "29-09-1980", "ZZZ1");
-        $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "XXX2","YYY2", "30-10-1981", "ZZZ2");
-        $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "XXX3","YYY3", "29-09-1980", "ZZZ3");
-        $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "XXX4","YYY4", "13-07-1991", "ZZZ4");
-        $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "AMKRANE","Yassine", "20-03-1993", "ZZZ5");
-        $this->gumballMachineInstance->InsertC("IOT","10", $this->gumballMachineInstance->GetIdP("XXX2","YYY2"));
-        $this->gumballMachineInstance->InsertC("IA","12", $this->gumballMachineInstance->GetIdP("XXX1","YYY1"));
-        $this->gumballMachineInstance->InsertC("C++","18", $this->gumballMachineInstance->GetIdP("XXX3","YYY3"));
-        $this->gumballMachineInstance->InsertC("EDL","30", $this->gumballMachineInstance->GetIdP("XXX3","YYY3"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "XXX1","YYY1", "29-09-1980", "ZZZ1"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "XXX2","YYY2", "30-10-1981", "ZZZ2"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "XXX3","YYY3", "29-09-1980", "ZZZ3"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "XXX4","YYY4", "13-07-1991", "ZZZ4"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertP($this->gumballMachineInstance->getDB(), "AMKRANE","Yassine", "20-03-1993", "ZZZ5"));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertC("IOT","10", $this->gumballMachineInstance->GetIdP("XXX2","YYY2")));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertC("IA","12", $this->gumballMachineInstance->GetIdP("XXX1","YYY1")));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertC("C++","18", $this->gumballMachineInstance->GetIdP("XXX3","YYY3")));
+        $this->assertEquals(true, $this->gumballMachineInstance->InsertC("EDL","30", $this->gumballMachineInstance->GetIdP("XXX3","YYY3")));
     }
     
     public function testAffichageProfAVI()
