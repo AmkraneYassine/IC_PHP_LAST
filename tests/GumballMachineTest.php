@@ -64,4 +64,8 @@ class GumballMachineTest extends TestCase
     {
         $this->assertEquals(true, $this->gumballMachineInstance->AffichageCours("After Insertion of Courses"));
     }
+    public function tearDown(): void
+    {
+        $this->$bdd->exec('DROP DATABASE IF EXISTS '.self::DBNAME);
+    }
 }
