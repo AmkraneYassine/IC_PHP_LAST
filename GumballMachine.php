@@ -55,7 +55,7 @@ class GumballMachine
 		}
 	*/
 		
-		$db = "user01_test_php" ;
+		$db = "user01_test_phpp" ;
 		$host = "192.168.250.3";
 		$root = "user01";
 		$root_password = "user01";
@@ -72,7 +72,7 @@ class GumballMachine
 	    try
 	    {
 		// "mysql:host=$this->servername;dbname=$this->db_name", $this->db_user, $this->db_pass
-	        $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_php;charset=utf8', 'user01', 'user01');
+	        $this->bdd = new PDO('mysql:host=192.168.250.3;dbname=user01_test_phpp;charset=utf8', 'user01', 'user01');
 	        //print "Yes Dans le constructeur de BaseClass\n";
 	    }
 	    
