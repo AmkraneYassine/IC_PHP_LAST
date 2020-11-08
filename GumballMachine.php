@@ -58,34 +58,6 @@ class GumballMachine
 			die('Erreur : ' . $e->getMessage());
 	    }
 	}
-	
-	public function InsertData()
-	{  
-	    try 
-	    {
-	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', ''); 
-		$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX1','YYY1', '1980-09-29','ZZZA')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX2','YYY2', '1981-10-30','ZZZB')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX3','YYY3', '1980-09-29','ZZZC')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX4','YYY4', '1991-07-13','ZZZD')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '1993-03-20', 'ZZZE')");
-      	
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', $this->gumballMachineInstance->GetIdP('XXX2','YYY2'))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', $this->gumballMachineInstance->GetIdP('XXX1','YYY1'))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('C++','18', $this->gumballMachineInstance->GetIdP('XXX3','YYY3'))");
-        	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('EDL','30', $this->gumballMachineInstance->GetIdP('XXX3','YYY3'))");
-
-	       echo "\n 0 - Insertions";
-	       return true;
-	    }
-	    catch(PDOException $e)
-	    {
-	        echo "<br>" . $e->getMessage();
-		return false;
-	    }
-	    
-	}
-
 
     	public function getDB()
     	{
