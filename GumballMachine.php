@@ -57,11 +57,10 @@ class GumballMachine
 	    }
 	    
 	    
-	public function tearDown(): void
+	public function dropDB (): void
     	{
         	$this->$bdd->exec('DROP DATABASE IF EXISTS '.self::DBNAME);
     	}
-	}
 
     	public function getDB()
     	{
