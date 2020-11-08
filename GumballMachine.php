@@ -65,10 +65,10 @@ class GumballMachine
 	    {
 	       	//$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', ''); 
 		$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX1','YYY1', '1980-09-29','ZZZA')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX2','YYY2', '30-10-1981','ZZZB')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX3','YYY3', '29-09-1980','ZZZC')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX4','YYY4', '13-07-1991','ZZZD')");
-        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '20-03-1993', 'ZZZE')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX2','YYY2', '1981-10-30','ZZZB')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX3','YYY3', '1980-09-29','ZZZC')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('XXX4','YYY4', '1991-07-13','ZZZD')");
+        	$this->bdd->exec("INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('AMKRANE','Yassine', '1993-03-20', 'ZZZE')");
       	
         	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IOT','10', $this->gumballMachineInstance->GetIdP('XXX2','YYY2'))");
         	$this->bdd->exec("INSERT INTO cours (intitule, duree, id_prof) VALUES ('IA','12', $this->gumballMachineInstance->GetIdP('XXX1','YYY1'))");
